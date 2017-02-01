@@ -1,0 +1,12 @@
+section.contribute {
+	border-top: 2vh solid #FF6C6C;
+}
+
+section.contribute > .section-title > .logo-add {
+	color: #FF6C6C;
+}
+
+section.contribute > .content-block > p > .button {
+	background-color: #FF6C6C;
+	line-height: normal;
+}

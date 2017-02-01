@@ -1,0 +1,110 @@
+header {
+	padding: 20px;
+	height: 60vh;
+	background-color: #EBEBEB;
+}
+
+header > .bar > .logo {
+	font-size: 5rem;
+}
+.bar {
+	position: absolute;
+	width: calc(100vw);
+	margin-left: -20px;
+	margin-top: -20px;
+	vertical-align: middle;
+}
+
+.burger-container {
+	width: 4rem;
+	height: 3.5rem;
+	position: absolute;
+	top: .7rem;
+	right: 20px;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.burger.x {
+	background-color: rgba(0, 0, 0, 0);
+	position: fixed;
+	padding-top: .2rem;
+}
+
+.burger.x::before, .burger.x::after {
+	opacity: 1;
+}
+
+.burger.x::before {
+	transform: rotate(-225deg);
+	top: 0rem;
+}
+
+.burger.x::after {
+	transform: rotate(225deg);
+	top: -.5rem;
+}
+
+
+.burger {
+	width: 4rem;
+	height: .5rem;
+	background-color: #000;
+	border-radius: 10px;
+	position: relative;
+	top: calc(2rem - .5rem);
+
+	transition: background-color 0.1s ease-in-out
+
+}
+
+.burger::before, .burger::after {
+	content: "";
+	width: 4rem;
+	height: .5rem;
+	position: relative;
+	background-color: #000;
+	display: block;
+	border-radius: 10px;
+
+	transition: top 0.1s ease-in-out,
+		transform 0.1s ease-in-out;
+}
+
+.burger::before {
+	top: calc(1.5rem);
+}
+
+.burger::after {
+	top: -2rem;
+}
+
+.computer {
+	width: 40vw;
+	height: 20vw;
+	background-color: #fff;
+	border: 3vw solid black;
+	border-radius: 2vw 2vw 0px 0px;
+	border-bottom: none;
+	margin: 0 auto;
+	margin-top: calc(60vh - 23vw - 20px);
+	font-size: 2vw;
+	padding: 20px;
+}
+
+.join-us {
+	background-color: #FC5E60;
+	font-size: 2vw;
+}
+
+@media (max-width: 740px) {
+	.computer {
+		font-size: 3vw;
+		width: 60vw;
+		height: 30vw;
+		border: 4.5vw solid black;
+		border-radius: 3vw 3vw 0 0;
+		border-bottom: none;
+		margin-top: calc(60vh - 34.5vw - 20px);
+	}	
+}

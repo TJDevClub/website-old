@@ -1,0 +1,42 @@
+section.lecture {
+	border-top: 2vh solid #31D39A;
+}
+
+section.lecture > .section-title > .logo-add {
+	color: #31D39A;
+}
+
+section.lecture > .content-block > .lecture-calendar {
+	margin: 0 auto;
+}
+
+section.lecture > .content-block > .lecture-calendar > .lecture-label {
+	font-size: 1.2rem;
+	color: #888;
+}
+
+section.lecture > .content-block > .lecture-calendar > .lecture-list > .lecture-item {
+	list-style: none;
+	padding: 20px;
+}
+
+section.lecture > .content-block > .lecture-calendar > .lecture-list > .lecture-item > a:hover {
+	color: #31D39A;
+}
+
+section.lecture > .content-block > .lecture-calendar > .lecture-list > .lecture-item > a {
+	text-decoration: none;
+	color: #000;
+}
+
+section.lecture > .content-block > .lecture-calendar > .lecture-list > .lecture-item > a > .lecture-title {
+	font-size: 2rem;
+}
+
+section.lecture > .content-block > .lecture-calendar > .lecture-list > .lecture-item > a > .lecture-presenter {
+	font-size: 1.5rem;
+}
+
+section.lecture > .content-block > .lecture-calendar > .read-lectures {
+	background-color: #31D39A;
+}

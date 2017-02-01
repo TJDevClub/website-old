@@ -1,0 +1,31 @@
+form > input {
+	width: 20vw;
+	font-size: 2rem;
+	padding: 20px;
+	border: none;
+	border-bottom: 1px solid #C85CFF;
+	border-left: 1px solid #C85CFF;
+	font-family: Menlo, Courier, Monospace;
+	color: #C85CFF;
+	outline: none;
+
+	display: inline-block;
+}
+
+
+.button.email-submit {
+	width: 10vw;
+	background-color: #C85CFF;
+	padding: 20px 10px;
+	font-size: 2rem;
+	border: none;
+	font-family: Menlo, Courier, Monospace;
+}
+
+section.join {
+	border-top: 2vh solid #C85CFF;
+}
+
+section.join > .section-title > .logo-add {
+	color: #C85CFF;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TJ Dev Club</title>
+	<meta name="viewport" content="initial-scale=1">
+
+	<link rel="icon" href="./favicon.ico">
+
+	<!-- build:css assets/css/site.min.css -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/header.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/join.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/lecture.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/hack.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/contribute.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/footer.css">
+	<!-- endbuild -->
+
+	<!-- build:js assets/js/main.min.js -->
+	<script type="text/javascript" src="./assets/js/typer.js"></script>
+	<script type="text/javascript" src="./assets/js/main.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body>
+	<header>
+		<div class="bar">
+			<span class="logo">
+				<span class="logo-dev">DEV.</span><span class="logo-add">club</span>
+			</span>
+			<div class="burger-container">
+				<div class="burger"></div>
+			</div>
+		</div>
+
+		<div class="computer">
+		</div>
+    </header>
+	<nav>
+		<ul>
+			<li><a href="#join" class="button join">Join</a></li>
+			<li><a href="#lecture" class="button learn">Learn</a></li>
+			<li><a href="#contribute" class="button contribute">Contribute</a></li>
+			<li><a href="#hack" class="button hack">Hack</a></li>
+		</ul>
+	</nav>
+	<section class="join" id="join">
+		<span class="section-title">
+			<span class="logo-dev">DEV.</span><span class="logo-add">join</span>
+		</span>
+		<div class="content-block">
+			<p>
+				Come join us on <strong>Wednesday B Blocks</strong> in Galileo Commons! Also sign up for the mailing list to be notified of opportunities and events.
+				<br>
+			</p>
+			<form action="http://localhost:3000/mail/new" method="post">
+				<input type="text" name="name" id="name" placeholder="First Name">
+				<input type="email" name="email" id="email" placeholder="Email">
+				<input class="button email-submit" type="submit" value="Join"></input>
+			</form>
+		</div>
+	</section>
+	<section class="lecture" id="lecture">
+		<span class="section-title">
+			<span class="logo-dev">DEV.</span><span class="logo-add">learn</span>
+		</span>
+		<div class="content-block">
+			<div class="lecture-calendar">
+				<div class="lecture-label">Upcoming Lectures</div>
+				<ul class="lecture-list">
+					<li class="lecture-item">
+						<a href="#">
+							<div class="lecture-title">TBA</div>
+							<div class="lecture-presenter">Presented By: TBA</div>
+						</a>
+					</li>
+				</ul>
+				<div class="lecture-label">Past Lectures</div>
+				<ul class="lecture-list">
+					<li class="lecture-item">
+						<a href="http://github.com/tjdevclub/devclub-devtools">
+							<div class="lecture-title">6-13-16: Chrome Dev Tools</div>
+							<div class="lecture-presenter">Presented By: Naitian Z.</div>
+						</a>
+					</li>
+					<li class="lecture-item">
+						<a href="http://github.com/tjdevclub/latex-intro">
+							<div class="lecture-title">5-09-16: LaTeX Intro</div>
+							<div class="lecture-presenter">Presented By: Rushi S.</div>
+						</a>
+					</li>
+					<li class="lecture-item">
+						<a href="http://github.com/tjdevclub/facebook-chat-api-lesson">
+							<div class="lecture-title">3-30-16: Facebook Messenger API</div>
+							<div class="lecture-presenter">Presented By: Matthew K.</div>
+						</a>
+					</li>
+				</ul>
+				<a class="button read-lectures" href="https://github.com/tjdevclub">Read More</a>
+			</div>
+		</div>
+
+	</section>
+	<section class="contribute" id="contribute">
+		<span class="section-title">
+			<span class="logo-dev">DEV.</span><span class="logo-add">contribute</span>
+		</span>
+		<div class="content-block">
+			<p>
+				Interested? Have a question? Have a suggestion? Dev Club is run on GitHub!
+				<br>
+				<a class="button" href="https://github.com/tjdevclub">Go to our GitHub</a>
+				<br>
+				Wanna lecture? Email us and read the docs.
+				<br>
+				<a class="button" href="mailto:lecture@tjdev.club">lecture@tjdev.club</a>
+
+			</p>
+		</div>
+	</section>
+	<section class="hack" id="hack">
+		<span class="section-title">
+			<span class="logo-dev">DEV.</span><span class="logo-add">hack</span>
+		</span>
+		<div class="content-block">
+			<div class="list-container">
+				<ul class="hack-list resources">
+					<div>Resources</div>
+					<li class="hack-item">css-tricks.com</li>
+					<li class="hack-item">developers.google.com</li>
+					<li class="hack-item">blog.naitian.org</li>
+					<a class="button" href="https://github.com/TJDevClub/very-resources-much-read">Read More</a>
+				</ul>
+
+				<ul class="hack-list hackathons">
+					<div>Upcoming Hackathons</div>
+					<li class="hack-item"><a href="http://hackmty.com/">HackMTY (8-27-16)</a></li>
+					<li class="hack-item"><a href="https://www.bigredhacks.com/">BigRed//Hack (9-16-16)</a></li>
+					<li class="hack-item"><a href="http://lumohacks.com/">lumohacks (9-17-16)</a></li>
+					<a class="button" href="https://mlh.io/seasons/na-2017/events">Full List</a>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<span>Made with <span style="color: red">&hearts;</span> by TJ Dev Club.</span>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+@font-face {
+	font-family: "Meslo";
+	src: local("Menlo"),
+		url("../fonts/MesloLGSDZ-Regular.ttf");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Meslo";
+	src: local("Menlo"),
+		url("../fonts/MesloLGSDZ-Bold.ttf");
+	font-weight: 700;
+}

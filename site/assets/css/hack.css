@@ -1,0 +1,36 @@
+section.hack {
+	border-top: 2vh solid #F2CB2E;
+}
+
+section.hack > .section-title > .logo-add {
+	color: #F2CB2E;
+}
+
+section.hack > .content-block > .list-container {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+section.hack > .content-block > .list-container > .hack-list {
+	width: 50%;
+	list-style: none;
+}
+
+section.hack > .content-block > .list-container > .hack-list > div {
+	font-size: 2em;
+}
+
+section.hack > .content-block > .list-container > .hack-list > .hack-item {
+	font-size: 1.5em;
+	line-height: 2;
+}
+
+section.hack > .content-block > .list-container > .hack-list > .hack-item::before {
+	content: "-"
+}
+
+section.hack > .content-block > .list-container > .hack-list > .button {
+	background-color: #F2CB2E;
+}
