@@ -22,7 +22,14 @@
 	<script type="text/javascript" src="./assets/js/typer.js"></script>
 	<script type="text/javascript" src="./assets/js/main.js"></script>
 	<!-- endbuild -->
-</head>
+	<script src="./assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="./assets/js/repositories.js" type="text/javascript"></script>
+	<script>
+	$(function() {
+    	$("#reposis").loadRepositories("TJDevClub");
+	  });
+	</script>
+	</head>
 
 <body>
 	<header>
@@ -68,35 +75,9 @@
 		</span>
 		<div class="content-block">
 			<div class="lecture-calendar">
-				<div class="lecture-label">Upcoming Lectures</div>
-				<ul class="lecture-list">
-					<li class="lecture-item">
-						<a href="#">
-							<div class="lecture-title">TBA</div>
-							<div class="lecture-presenter">Presented By: TBA</div>
-						</a>
-					</li>
-				</ul>
+	
 				<div class="lecture-label">Past Lectures</div>
-				<ul class="lecture-list">
-					<li class="lecture-item">
-						<a href="http://github.com/tjdevclub/devclub-devtools">
-							<div class="lecture-title">6-13-16: Chrome Dev Tools</div>
-							<div class="lecture-presenter">Presented By: Naitian Z.</div>
-						</a>
-					</li>
-					<li class="lecture-item">
-						<a href="http://github.com/tjdevclub/latex-intro">
-							<div class="lecture-title">5-09-16: LaTeX Intro</div>
-							<div class="lecture-presenter">Presented By: Rushi S.</div>
-						</a>
-					</li>
-					<li class="lecture-item">
-						<a href="http://github.com/tjdevclub/facebook-chat-api-lesson">
-							<div class="lecture-title">3-30-16: Facebook Messenger API</div>
-							<div class="lecture-presenter">Presented By: Matthew K.</div>
-						</a>
-					</li>
+				<ul class="lecture-list" id="reposis">
 				</ul>
 				<a class="button read-lectures" href="https://github.com/tjdevclub">Read More</a>
 			</div>
