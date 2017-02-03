@@ -2,21 +2,26 @@ jQuery.githubUser = function(username, callback) {
    jQuery.getJSON('https://api.github.com/users/'+username+'/repos?callback=?',callback)
 }
  
-jQuery.fn.loadRepositories = function(username) {
+jQuery.fn.loadRepositories = function(username, maxCount) {
     this.html("<span>Querying GitHub for " + username +"'s repositories...</span>"); //Should only exist while loading
      
     var target = this;
     $.githubUser(username, function(data) {
         var repos = data.data; // JSON Parsing
+		console.log(repos)
+
         sortByName(repos); //Puts them in date-order
      
         var list = $('<div/>');
 		var counter = 0;
         target.empty().append(list);
         $(repos).each(function() {
+			if (!this.description){
+				this.description = " ";
+			}
 			if (!this.description.includes('🍠')){ //Not presentations
 			counter+=1;
-			if (counter <=4){ //Appending four lectures
+			if (maxCount == -1 || counter <=maxCount){ //Appending four lectures
             if (this.name != (username.toLowerCase()+'.github.com')) {
                 var date = this.updated_at.split('-');
 				var year = date[0];
@@ -31,6 +36,7 @@ jQuery.fn.loadRepositories = function(username) {
       });
       
     function sortByName(repos) {
+		console.log(repos);
         repos.sort(function(a,b) {
 			return b.updated_at.localeCompare(a.updated_at); //Compare when last updated (first is most recent)
        });

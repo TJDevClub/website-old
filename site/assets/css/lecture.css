@@ -40,3 +40,7 @@ section.lecture > .content-block > .lecture-calendar > .lecture-list > .lecture-
 section.lecture > .content-block > .lecture-calendar > .read-lectures {
 	background-color: #31D39A;
 }
+
+.archiveButton{
+	font-size: 2.8rem;
+}
