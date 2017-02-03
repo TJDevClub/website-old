@@ -3,8 +3,12 @@
 
 'use strict';
 window.onload = function () {
-	var typer = new Typer(document.querySelector('.computer'));
-	typer.addText('dev -hi');
+    jQuery(function() {
+      	jQuery("#reposis").loadRepositories("TJDevClub");
+    });
+
+    var typer = new Typer(document.querySelector('.computer'));
+    typer.addText('dev -hi');
 	typer.newLine();
 	typer.addText('Welcome to Dev Club...');
 	typer.newLine();

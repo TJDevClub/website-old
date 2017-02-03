@@ -3,6 +3,7 @@ jQuery.githubUser = function(username, callback) {
 }
  
 jQuery.fn.loadRepositories = function(username) {
+    console.log('hasldkghasdflkasdh');
     this.html("<span>Querying GitHub for " + username +"'s repositories...</span>"); //Should only exist while loading
      
     var target = this;
@@ -14,7 +15,8 @@ jQuery.fn.loadRepositories = function(username) {
 		var counter = 0;
         target.empty().append(list);
         $(repos).each(function() {
-			if (!this.description.includes('🍠')){ //Not presentations
+            let description = this.description;
+			if (!description.includes('🍠')){ //Not presentations
 			counter+=1;
 			if (counter <=4){ //Appending four lectures
             if (this.name != (username.toLowerCase()+'.github.com')) {
