@@ -16,10 +16,14 @@ jQuery.fn.loadRepositories = function(username, maxCount) {
 		var counter = 0;
         target.empty().append(list);
         $(repos).each(function() {
-			if (!this.description){
-				this.description = " ";
+			let description = this.description;
+			if (!description){
+				description = " ";
 			}
-			if (!this.description.includes('🍠')){ //Not presentations
+			//console.log(encodeURI(description));
+			var utDescription = encodeURI(description);
+			//console.log(encodeURI('🍠'));
+			if (!utDescription.includes("%F0%9F%8D%A0")){ //Not presentations
 			counter+=1;
 			if (maxCount == -1 || counter <=maxCount){ //Appending four lectures
             if (this.name != (username.toLowerCase()+'.github.com')) {
@@ -28,7 +32,7 @@ jQuery.fn.loadRepositories = function(username, maxCount) {
 				var month = date[1];
 				var theRest = date[2].split('T');
 				var day = theRest[0];
-				var str = '<li class="lecture-item">' + '<a href="'+ (this.homepage?this.homepage:this.html_url) +'">' + '<div class="lecture-title">'+month+'-' + day+'-' + year + ': ' + this.name + '</div>' + '<div class="lecture-presenter">' + this.description +'</div>'+ '</a>'
+				var str = '<li class="lecture-item">' + '<a href="'+ (this.homepage?this.homepage:this.html_url) +'">' + '<div class="lecture-title">'+month+'-' + day+'-' + year + ': ' + this.name + '</div>' + '<div class="lecture-presenter">' + description +'</div>'+ '</a>'
 				$('#reposis').append(str); //Append html and data
             }}
 			}
@@ -42,3 +46,4 @@ jQuery.fn.loadRepositories = function(username, maxCount) {
        });
     }
 };
+

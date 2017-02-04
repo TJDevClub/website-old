@@ -3,7 +3,14 @@
 
 'use strict';
 window.onload = function () {
-	var typer = new Typer(document.querySelector('.computer'));
+	
+	var title = $('title').text();
+	if (title.includes('Archives')) {
+		
+		$("#reposis").loadRepositories("TJDevClub", -1);
+	}
+	else{
+		var typer = new Typer(document.querySelector('.computer'));
 	typer.addText('dev -hi');
 	typer.newLine();
 	typer.addText('Welcome to Dev Club...');
@@ -24,6 +31,10 @@ window.onload = function () {
 	for (var i = navButtons.length - 1; i >= 0; i--) {
 		navButtons.item(i).addEventListener('click', closeNav);
 	}
+		$("#reposis").loadRepositories("TJDevClub", 4);
+	}
+	//$("#reposis").loadRepositories("TJDevClub", 4);
+	
 };
 
 function closeNav () {
