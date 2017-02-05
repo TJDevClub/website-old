@@ -8,7 +8,7 @@ jQuery.fn.loadRepositories = function(username, maxCount) {
     var target = this;
     $.githubUser(username, function(data) {
         var repos = data.data; // JSON Parsing
-		console.log(repos)
+		//console.log(repos)
 
         sortByName(repos); //Puts them in date-order
      
@@ -40,7 +40,7 @@ jQuery.fn.loadRepositories = function(username, maxCount) {
       });
       
     function sortByName(repos) {
-		console.log(repos);
+		//console.log(repos);
         repos.sort(function(a,b) {
 			return b.updated_at.localeCompare(a.updated_at); //Compare when last updated (first is most recent)
        });
