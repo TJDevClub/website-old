@@ -5,7 +5,14 @@ section.lecture {
 section.lecture > .section-title > .logo-add {
 	color: #31D39A;
 }
-
+section.lecture > .section-title > .lecture-title > a {
+	color: #000;
+	font-size: 2.7rem;
+	text-decoration: none;
+}
+section.lecture > .section-title > .lecture-title > a:hover {
+	color: #31D39A;
+}
 section.lecture > .content-block > .lecture-calendar {
 	margin: 0 auto;
 }
