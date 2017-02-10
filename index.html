@@ -1,0 +1,37 @@
+---
+layout: default
+title: 
+---
+	<header>
+		<div class="bar">
+			<span class="logo">
+				<span class="logo-dev">DEV.</span><span class="logo-add">club</span>
+			</span>
+			<div class="burger-container">
+				<div class="burger"></div>
+			</div>
+		</div>
+
+		<div class="computer">
+		</div>
+    </header>
+<nav>
+		<ul>
+			<li><a href="#join" class="button join">Join</a></li>
+			<li><a href="#lecture" class="button learn">Learn</a></li>
+			<li><a href="#contribute" class="button contribute">Contribute</a></li>
+			<li><a href="#hack" class="button hack">Hack</a></li>
+		</ul>
+	</nav>
+{% for section in site.sections %}
+
+	<section class="{{section.title}}" id="{{section.title}}">
+		<span class="section-title">
+			<span class="logo-dev">DEV.</span><span class="logo-add">{{section.name}}</span>
+		</span>
+		<div class="content-block">
+			{{section.content}}
+		</div>
+	</section>
+{% endfor %}
+
