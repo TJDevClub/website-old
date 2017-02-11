@@ -1,8 +1,7 @@
 collections:
  - sections
-
 exclude:
- # - assets
+  - _assets
   - Gemfile
   - Gemfile.lock
   - package.json

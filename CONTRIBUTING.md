@@ -9,6 +9,8 @@ Currently open issues are under the issues tab, and basically up for grabs.
 Make sure you pull before you start working, and always develop by viewing
 
 Run `gulp watch` to auto-build the site while you're working. Serve and preview the file out of the `dist/` directory!
+**UPDATE**
+run `gulp serve` to build and run locally using browser-sync out of the `_site` directory
 
 
 ### CSS
