@@ -6,6 +6,7 @@ const babel = require('gulp-babel');
 const autoprefixer = require('gulp-autoprefixer');
 const cp = require('child_process');
 const browserSync = require('browser-sync');
+const del = require('del');
 const debug = require('gulp-debug');
 const spawn = cp.spawn;
 const cssmin = require('gulp-cssmin');
@@ -22,14 +23,15 @@ const jekyll_build = (done) => {
 }
 
 
-const clean = () => {
+const clean = (done) => {
 	console.log("Began clean");
-	return gulp.src('_site/', {read: false})
-        .pipe(cleaner());
+	return del('_site');
+	//return gulp.src('_site/', {read: false})
+    //    .pipe(cleaner());
 };
 
 const css = () => {
-	console.log("CSS");
+	console.log("css");
 	return gulp.src('_assets/css/*.css')
 		.pipe(debug())
 		.pipe(autoprefixer())
@@ -38,7 +40,7 @@ const css = () => {
 };
 
 const fonts = () => {
-	console.log("Fonts");
+	console.log("fonts");
 	return gulp.src('_assets/fonts/*')
 		.pipe(gulp.dest('_site/assets/fonts'));
 };
@@ -81,4 +83,4 @@ gulp.task('jekyll_build', jekyll_build);
 
 gulp.task('serve', serve);
 
-gulp.task('default', gulp.series(['jekyll_build', gulp.parallel(['js', 'css', 'fonts']), 'serve']));
+gulp.task('default', gulp.series(['clean', 'jekyll_build', gulp.parallel(['js', 'css', 'fonts']), 'serve']));
