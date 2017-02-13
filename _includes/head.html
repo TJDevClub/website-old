@@ -4,7 +4,7 @@
 
 	<link rel="icon" href="./favicon.ico">
 
-	<!-- build:css assets/css/site.min.css -->
+	<!-- build:css assets/css/{{page.id}}.min.css -->
 	{% if page.my_css %}
         {% for style in page.my_css %}
             <link rel="stylesheet" type="text/css" href="./assets/css/{{ style }}.css">
@@ -17,7 +17,7 @@
 
 		<!-- endbuild -->
 
-	<!-- build:js assets/js/main.min.js -->
+	<!-- build:js assets/js/{{page.id}}.min.js -->
 	{% if page.my_js %}
         {% for script in page.my_js %}
             <script type="text/javascript" src="./assets/js/{{script}}.js"></script>
