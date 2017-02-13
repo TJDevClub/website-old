@@ -67,7 +67,7 @@ const reload_site = (done) => {
 	return (browserSync.reload() || true) && done();
 };
 const total_reload = () =>{
-	return gulp.series( 'jekyll_build', gulp.parallel(['js', 'css', 'fonts']), 'reload_site');
+	return gulp.series( 'jekyll_build', gulp.parallel('js', 'css', 'fonts'), 'reload_site');
 }
 const serve = () => {
 	browserSync.init({
