@@ -89,5 +89,5 @@ gulp.task('total_reload', total_reload);
 gulp.task('serve', serve);
 gulp.task('reload_site', reload_site);
 gulp.task('useref_task', useref_task);
-gulp.task('build',  gulp.series('clean', 'jekyll_build', gulp.parallel(['js', 'css', 'fonts']), 'useref_task'));
-gulp.task('default', gulp.series('clean', 'jekyll_build', gulp.parallel(['js', 'css', 'fonts']), 'useref_task', 'serve'));
+gulp.task('build',  gulp.series('clean', 'jekyll_build', gulp.parallel('js', 'css', 'fonts'), 'useref_task'));
+gulp.task('default', gulp.series('clean', 'jekyll_build', gulp.parallel('js', 'css', 'fonts'), 'useref_task', 'serve'));
