@@ -31,6 +31,11 @@ const clean = (done) => {
 	//return gulp.src('_site/', {read: false})
     //    .pipe(cleaner());
 };
+
+const clean_unneeded = (done) => {
+	console.log("cleaning unnecessary files");
+	return del(['_site/assets/js/*', '_site/assets/css/*', '!_site/assets/js/', '!_site/assets/css/', '!_site/assets/css/*.min.css', '!_site/assets/js/*.min.js']);
+}
 const useref_task = () =>{
 	console.log("Began useref");
 	return gulp.src('_site/*.html')
@@ -84,10 +89,11 @@ gulp.task('css', css);
 gulp.task('js', js);
 gulp.task('fonts', fonts);
 gulp.task('clean', clean);
+gulp.task('clean_unneeded', clean_unneeded);
 gulp.task('jekyll_build', jekyll_build);
 gulp.task('total_reload', total_reload);
 gulp.task('serve', serve);
 gulp.task('reload_site', reload_site);
 gulp.task('useref_task', useref_task);
-gulp.task('build',  gulp.series('clean', 'jekyll_build', gulp.parallel('js', 'css', 'fonts'), 'useref_task'));
-gulp.task('default', gulp.series('clean', 'jekyll_build', gulp.parallel('js', 'css', 'fonts'), 'useref_task', 'serve'));
+gulp.task('build',  gulp.series('clean', 'jekyll_build', gulp.parallel('js', 'css', 'fonts'), 'useref_task', 'clean_unneeded'));
+gulp.task('default', gulp.series('clean', 'jekyll_build', gulp.parallel('js', 'css', 'fonts'), 'useref_task', 'clean_unneeded', 'serve'));
