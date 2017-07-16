@@ -14,73 +14,73 @@ const cleaner = require('gulp-clean');
 const concat = require('gulp-concat');
 const useref = require('gulp-useref');
 
-const jekyll_command   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+const jekyll_command = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 const messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
 const jekyll_build = (done) => {
-	browserSync.notify(messages.jekyllBuild)
-	return spawn(jekyll_command, ['build'], {stdio:'inherit'}).on('close', done);
+  browserSync.notify(messages.jekyllBuild)
+  return spawn(jekyll_command, ['build'], {stdio:'inherit'}).on('close', done);
 }
 
 
 const clean = (done) => {
-	console.log("Began clean");
-	return del('_site');
-	//return gulp.src('_site/', {read: false})
+  console.log("Began clean");
+  return del('_site');
+  //return gulp.src('_site/', {read: false})
     //    .pipe(cleaner());
 };
 
 const clean_unneeded = (done) => {
-	console.log("cleaning unnecessary files");
-	return del(['_site/assets/js/*', '_site/assets/css/*', '!_site/assets/js/', '!_site/assets/css/', '!_site/assets/css/*.min.css', '!_site/assets/js/*.min.js']);
+  console.log("cleaning unnecessary files");
+  return del(['_site/assets/js/*', '_site/assets/css/*', '!_site/assets/js/', '!_site/assets/css/', '!_site/assets/css/*.min.css', '!_site/assets/js/*.min.js']);
 }
 const useref_task = () =>{
-	console.log("Began useref");
-	return gulp.src('_site/*.html')
-		.pipe(useref())
-		.pipe(gulp.dest('_site/'));
+  console.log("Began useref");
+  return gulp.src('_site/*.html')
+    .pipe(useref())
+    .pipe(gulp.dest('_site/'));
 };
 const css = () => {
-	console.log("Began css");
-	return gulp.src('_assets/css/*.css')
-		.pipe(debug())
-		.pipe(autoprefixer())
-		.pipe(cssmin())
-		.pipe(gulp.dest('_site/assets/css'));
+  console.log("Began css");
+  return gulp.src('_assets/css/*.css')
+    .pipe(debug())
+    .pipe(autoprefixer())
+    .pipe(cssmin())
+    .pipe(gulp.dest('_site/assets/css'));
 };
 const fonts = () => {
-	console.log("Began fonts");
-	return gulp.src('_assets/fonts/*')
-		.pipe(gulp.dest('_site/assets/fonts'));
+  console.log("Began fonts");
+  return gulp.src('_assets/fonts/*')
+    .pipe(gulp.dest('_site/assets/fonts'));
 };
 
 const js = () => {
-	console.log("Began js");
-	return gulp.src(['_assets/js/*.js'])
-		.pipe(debug())
-		.pipe(babel({
-        	presets: ['es2015']
-      	}))
-  		//.pipe(concat('scripts.js')) //as of 2/10/17, status is 'failing' https://www.npmjs.com/package/gulp-concat
-  		.pipe(uglify())
-  		.pipe(gulp.dest('_site/assets/js'));
+  console.log("Began js");
+  return gulp.src(['_assets/js/*.js'])
+    .pipe(debug())
+    .pipe(babel({
+    presets: ['es2015']
+  }))
+    //.pipe(concat('scripts.js')) //as of 2/10/17, status is 'failing' https://www.npmjs.com/package/gulp-concat
+    .pipe(uglify())
+    .pipe(gulp.dest('_site/assets/js'));
 };
 const reload_site = (done) => {
-	console.log("Began reload");
-	return (browserSync.reload() || true) && done();
+  console.log("Began reload");
+  return (browserSync.reload() || true) && done();
 };
 const total_reload = () =>{
-	return gulp.series( 'jekyll_build', gulp.parallel('js', 'css', 'fonts'), 'reload_site');
+  return gulp.series( 'jekyll_build', gulp.parallel('js', 'css', 'fonts'), 'reload_site');
 }
 const serve = () => {
-	browserSync.init({
+  browserSync.init({
         server: "_site"
     });
     gulp.watch('_assets/js/*.js', total_reload());
-	gulp.watch('_assets/css/*.css', total_reload());
- 	gulp.watch(['*.html', '_layouts/*.html', '_sections/*', '**/*.html', '!_site/*']).on('change', total_reload());
+  gulp.watch('_assets/css/*.css', total_reload());
+  gulp.watch(['*.html', '_layouts/*.html', '_sections/*', '**/*.html', '!_site/*']).on('change', total_reload());
 
 };
 
