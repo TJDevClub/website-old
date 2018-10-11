@@ -1,11 +1,1 @@
-collections:
- - sections
-exclude:
-  - _assets
-  - Gemfile
-  - Gemfile.lock
-  - package.json
-  - node_modules
-  - gulpfile.js
-  - README.md
-  - CONTRIBUTING.md
+language: ruby
