@@ -1,2 +1,4 @@
 language: ruby
-script: gulp
+deploy:
+   provider: gulp
+   script: gulp gulpfile.js
