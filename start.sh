@@ -2,3 +2,4 @@
 
 
 npm install gulp
+node gulpfile.js
