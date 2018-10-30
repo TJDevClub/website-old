@@ -1,2 +1,2 @@
 language: ruby
-script: gulp
+script: node gulpfile.js 
