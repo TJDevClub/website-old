@@ -1,4 +1,2 @@
 language: ruby
-deploy:
-   provider: gulp
-   script: gulp gulpfile.js
+script: bash start.sh
